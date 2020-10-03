@@ -1,6 +1,6 @@
 <template>
   <div>
-    <my-header></my-header>
+    <my-header/>
     <my-sidebar
       @onChangeTag="onChangeTag"
       @onTagsLoaded="onTagsInit"
@@ -11,11 +11,8 @@
         <v-row>
           <v-col cols="12">
             <!--这里显示管理员个人卡片-->
-            <profile-card></profile-card>
-
+            <profile-card />
             <!--这里显示管理员说明文档-->
-
-
             <div v-if="ifUsageShowed">
               <v-card style="margin-top: 10px;height: 600px;">
                 <v-card-title>
@@ -23,17 +20,14 @@
                     说明
                   </div>
                 </v-card-title>
-
                 <v-card-text class="content-text">
                   <p>
                     本平台分为两办管理员和子管理员。两办管理员可以管理学生提出问题的“其他”标签和子管理员退回的标签。
                     同时可以在问题下添加标签。子管理员可以管理自己标签下的问题并进行回复，如果觉得不属于本标签的问题，可以退回问题。
                   </p>
-
                 </v-card-text>
               </v-card>
             </div>
-
 
             <div v-else>
               <div id="question-block">
@@ -41,22 +35,13 @@
                   <!--这里显示问题-->
                   <div v-if="permission==='false'" class="question-field">
                     <!--扩展面板-->
-
-
-
                       <div class="expansion-box">
-
                           <div v-for="(item, i) in currentQuestions"
                                :key="i"
                                class="each-question-box">
-
                             <div class="question-title">
                               {{item.name}}
                             </div>
-
-
-
-
                               <!--问题描述-->
                               <div>
                                 <v-card>
@@ -69,16 +54,12 @@
                                     <div>
                                       <image-grid :question-id="item.id"></image-grid>
                                     </div>
-
                                     <div class="datetime-style">
                                       {{item.updated_at}}
                                     </div>
-
                                   </v-card-text>
                                 </v-card>
                               </div>
-
-
                               <v-divider></v-divider>
                               <v-tabs center-active grow v-model="controlTab">
                                 <v-tab
@@ -91,7 +72,6 @@
                                 <v-tab-item key="updateTag">
                                   <v-card flat>
                                     <v-chip style="margin-top: 15px">流转原因: {{ item.admin_commit }}</v-chip>
-
                                     <v-divider style="margin-top: 15px"></v-divider>
 
                                     <v-list two-line>
