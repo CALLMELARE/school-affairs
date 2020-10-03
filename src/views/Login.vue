@@ -149,5 +149,26 @@ a:hover {
     text-align: center;
     font-size: 24px;
     margin: 14px 0;
+    /*margin-left: 45%;*/
+    font-weight: 900;
+    font-size: 28px;
+    flex: 2;
+    margin-top: 8px;
+    width: 100%;
+    margin-left: 20%;
+}
+
+
+.twt-logo img{
+  height: 48px;
+}
+
+.twt-logo{
+  flex: 1;
+}
+
+.login-title-box{
+  display: flex;
+  width: 100%;
 }
 </style>
